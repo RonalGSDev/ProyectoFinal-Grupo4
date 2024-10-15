@@ -1,33 +1,43 @@
-// src/components/LoginCliente.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import RegistroCliente from './RegistroCliente'; // Importar el componente de registro
-import { useAuth } from '../contex/AuthContext'; // Importar el contexto de autenticación
+import RegistroCliente from './RegistroCliente';
+import { useAuth } from '../contex/AuthContext'; 
 
 const LoginCliente = () => {
-  const navigate = useNavigate();
-  const { login } = useAuth(); // Obtener la función de login del contexto
-  const [isRegistering, setIsRegistering] = useState(false); // Estado para manejar el cambio entre formularios
-  const [errorMessage, setErrorMessage] = useState(''); // Mensaje de error
+  const navigate = useNavigate(); 
+  // Obtener la función de login del contexto
+  const { login } = useAuth();
+  // Estado para manejar el cambio entre formularios
+  const [isRegistering, setIsRegistering] = useState(false); 
+  // Mensaje de error
+  const [errorMessage, setErrorMessage] = useState(''); 
 
   const handleLogin = async (e) => {
-    e.preventDefault(); // Evita el envío del formulario
+    e.preventDefault(); 
     const email = e.target.email.value;
     const password = e.target.password.value;
-    
+
     try {
       const response = await fetch('http://localhost:8080/clientes/login?correo=' + email + '&password=' + password, {
         method: 'POST',
       });
 
       if (response.ok) {
-        // Si las credenciales son correctas, iniciar sesión y redirigir
-        login('cliente'); // Iniciar sesión como cliente
-        navigate('/pagina-cliente'); // Redirigir a la página del cliente
+        // Si las credenciales son correctas, procesar la respuesta
+        const data = await response.json(); 
+        
+        // Almacenar el rol y el idCliente en el contexto
+        login('cliente', data.idCliente); // Cambiado para incluir el idCliente
+        
+        // Guardar el idCliente en el localStorage (si lo deseas)
+        localStorage.setItem('idCliente', data.idCliente); 
+        
+        // Llevar a paginaCliente
+        navigate('/pagina-cliente'); 
       } else {
         // Mostrar mensaje de error
-        const errorData = await response.text();
-        setErrorMessage(errorData);
+        const errorData = await response.json(); 
+        setErrorMessage(errorData.message); 
       }
     } catch (error) {
       console.error('Error:', error);

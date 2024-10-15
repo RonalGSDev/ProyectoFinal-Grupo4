@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.demo.proyecto.Models.ClientesModel;
+import com.demo.proyecto.Models.LoginResponse;
 import com.demo.proyecto.Service.ClientesService;
 
 @RestController
@@ -26,19 +27,20 @@ public class ClientesController {
             this.clientesService.save(entity);
             return ResponseEntity.ok("Cliente guardado correctamente");
         } catch (RuntimeException e) {
-            return ResponseEntity.badRequest().body(e.getMessage()); // Devuelve el mensaje de error específico
+            return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Error en el servidor");
         }
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestParam String correo, @RequestParam String password) {
+    public ResponseEntity<LoginResponse> login(@RequestParam String correo, @RequestParam String password) {
         Optional<ClientesModel> cliente = clientesService.findByCorreoAndPassword(correo, password);
         if (cliente.isPresent()) {
-            return ResponseEntity.ok("Inicio de sesión exitoso");
+            LoginResponse response = new LoginResponse(cliente.get().getId(), "Inicio de sesión exitoso");
+            return ResponseEntity.ok(response);
         } else {
-            return ResponseEntity.badRequest().body("Credenciales incorrectas");
+            return ResponseEntity.badRequest().body(new LoginResponse(-1, "Credenciales incorrectas"));
         }
     }
 

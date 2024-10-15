@@ -1,5 +1,7 @@
 package com.demo.proyecto.Controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -60,4 +62,15 @@ public class ProductosController {
     
     }
 
+    @GetMapping("/buscar/{idProducto}")
+    public ResponseEntity<ProductosModel> getProductoPorId(@PathVariable int idProducto) {
+        Optional<ProductosModel> producto = ProductosService.findById(idProducto);
+        if (producto.isPresent()) {
+            return ResponseEntity.ok(producto.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    
 }

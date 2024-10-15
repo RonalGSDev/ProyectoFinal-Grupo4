@@ -4,12 +4,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contex/AuthContext';
 import Logo from '../img/Logo.png';
 
-const NavBar = () => {
+const NavBar = ({ onMostrarCarrito }) => { // Prop para manejar el carrito
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = () => {
     logout();
+    localStorage.removeItem('idCliente'); // Eliminar idCliente del localStorage
     navigate('/'); // Redirigir al Main después de cerrar sesión
   };
 
@@ -30,7 +31,7 @@ const NavBar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav fs-5 ms-auto">
-            {!user ? ( // Mostrar botones de login si no hay usuario
+            {!user ? (
               <>
                 <li className="nav-item">
                   <Link className="nav-link" to="/login-cliente">Clientes</Link>
@@ -39,7 +40,7 @@ const NavBar = () => {
                   <Link className="nav-link" to="/login-admin">Administradores</Link>
                 </li>
               </>
-            ) : user === 'admin' ? ( // Mostrar enlaces para el admin
+            ) : user === 'admin' ? (
               <>
                 <li className="nav-item">
                   <Link className="nav-link" to="/pagina-admin">Inicio</Link>
@@ -51,21 +52,23 @@ const NavBar = () => {
                   <Link className="nav-link" to="/clientes">Clientes</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/administradores">Administradores</Link> {/* Enlace a administradores */}
+                  <Link className="nav-link" to="/administradores">Administradores</Link>
                 </li>
                 <li className="nav-item">
                   <button className="nav-link btn btn-link" onClick={handleLogout}>Cerrar Sesión</button>
                 </li>
               </>
             ) : (
-              // Si es un cliente
               <>
                 <li className="nav-item">
                   <Link className="nav-link" to="/pagina-cliente">Inicio</Link>
                 </li>
                 <li className="nav-item">
-                  <button className="nav-link btn btn-link" onClick={handleLogout}>Cerrar Sesión</button>
+                  <Link className="nav-link btn btn-light" to="/carrito">Carrito</Link> {/* Cambiado a Link para redirigir */}
                 </li>
+                <li className="nav-item">
+                  <button className="nav-link btn btn-link" onClick={handleLogout}>Cerrar Sesión</button>
+                </li>     
               </>
             )}
           </ul>

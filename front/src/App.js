@@ -1,5 +1,5 @@
 // src/App.js
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './contex/AuthContext';
 import NavBar from './components/NavBar';
@@ -12,9 +12,20 @@ import Main from './components/Main';
 import Producto from './components/Productos'; 
 import Clientes from './components/Clientes';
 import Administradores from './components/Administradores'; // Importa el componente de administradores
+import Carrito from './components/Carrito'; // Asegúrate de tener el componente Carrito
 import 'font-awesome/css/font-awesome.min.css';
 
 const App = () => {
+  const [mostrarCarrito, setMostrarCarrito] = useState(false);
+
+  const handleMostrarCarrito = () => {
+    setMostrarCarrito(true);
+  };
+
+  const handleCerrarCarrito = () => {
+    setMostrarCarrito(false);
+  };
+
   return (
     <AuthProvider>
       <Router>
@@ -28,7 +39,7 @@ const App = () => {
             path="/" 
             element={
               <>
-                <NavBar />
+                <NavBar onMostrarCarrito={handleMostrarCarrito} />
                 <Main />
                 <Footer />
               </>
@@ -38,7 +49,7 @@ const App = () => {
             path="/pagina-admin" 
             element={
               <>
-                <NavBar />
+                <NavBar onMostrarCarrito={handleMostrarCarrito} />
                 <PaginaAdmin />
                 <Footer />
               </>
@@ -48,7 +59,7 @@ const App = () => {
             path="/pagina-cliente" 
             element={
               <>
-                <NavBar />
+                <NavBar onMostrarCarrito={handleMostrarCarrito} />
                 <PaginaCliente />
                 <Footer />
               </>
@@ -58,7 +69,7 @@ const App = () => {
             path="/producto" 
             element={
               <>
-                <NavBar />
+                <NavBar onMostrarCarrito={handleMostrarCarrito} />
                 <Producto />
                 <Footer />
               </>
@@ -68,7 +79,7 @@ const App = () => {
             path="/clientes" 
             element={
               <>
-                <NavBar />
+                <NavBar onMostrarCarrito={handleMostrarCarrito} />
                 <Clientes />
                 <Footer />
               </>
@@ -78,8 +89,17 @@ const App = () => {
             path="/administradores" 
             element={
               <>
-                <NavBar />
+                <NavBar onMostrarCarrito={handleMostrarCarrito} />
                 <Administradores />
+                <Footer />
+              </>
+            } 
+          />
+          <Route 
+            path="/carrito" 
+            element={
+              <>
+                <Carrito onCerrarCarrito={handleCerrarCarrito} />
                 <Footer />
               </>
             } 

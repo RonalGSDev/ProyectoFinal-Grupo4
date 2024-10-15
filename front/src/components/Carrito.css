@@ -1,0 +1,42 @@
+.tarjetas {
+    display: flex;
+    flex-direction: column; /* Una tarjeta por fila */
+    align-items: center; /* Centra las tarjetas horizontalmente */
+    gap: 20px; /* Espacio entre las tarjetas */
+  }
+  
+  .tarjeta {
+    display: flex;
+    align-items: center; /* Centra la imagen y la información verticalmente */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 80%; /* Ancho de la tarjeta */
+  }
+  
+  .imagen-producto {
+    width: 150px; /* Aumenta el tamaño de la imagen */
+    height: 150px; /* Aumenta el tamaño de la imagen */
+    margin-right: 20px; /* Espacio entre la imagen y la información */
+  }
+  
+  .informacion {
+    flex-grow: 1; /* Permite que la sección de información ocupe el espacio restante */
+  }
+  
+  button {
+    display: block; /* Asegura que el botón esté centrado a la derecha */
+    margin-left: auto; /* Empuja el botón a la derecha */
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Cambia el color del botón al pasar el mouse */
+  }
+  
