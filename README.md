@@ -12,7 +12,7 @@
 [MOCKUPS.pdf](https://github.com/user-attachments/files/17372672/MOCKUPS.pdf)
 
 ## 4. Documentación
-## Este es Inicio de la página:
+### Este es Inicio de la página:
 
 ### Funcionalidades de la Página
 
