@@ -6,22 +6,19 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PostMapping; 
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.demo.proyecto.Models.PedidosModel;
 import com.demo.proyecto.Service.PedidosService;
 
-
 @RestController
 @RequestMapping("/pedidos")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5500", "http://127.0.0.1:5500"})
 public class PedidosController {
     
-
     @Autowired
     private PedidosService pedidosService;
 
@@ -31,12 +28,12 @@ public class PedidosController {
     }
 
     @PostMapping("/guardar")
-    public ResponseEntity<String> savePedidos(@RequestBody PedidosModel entity) {
-        try{
-            this.pedidosService.save(entity);
-            return ResponseEntity.ok("Pedido guardado correctamente");
-        }catch(Exception e){
-            return ResponseEntity.badRequest().body("Error en el servidor");
+    public ResponseEntity<PedidosModel> savePedidos(@RequestBody PedidosModel entity) {
+        try {
+            PedidosModel savedPedido = this.pedidosService.save(entity);
+            return ResponseEntity.ok(savedPedido);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(null);
         }
     }
 

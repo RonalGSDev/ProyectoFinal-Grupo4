@@ -27,6 +27,7 @@ public class ClientesController {
             this.clientesService.save(entity);
             return ResponseEntity.ok("Cliente guardado correctamente");
         } catch (RuntimeException e) {
+            System.out.println(e.getMessage()); 
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Error en el servidor");

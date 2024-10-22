@@ -25,9 +25,7 @@ public class AdministradoresServiceImpl implements AdministradoresService {
 
     @Override
     public AdministradoresModel save(AdministradoresModel entity) {
-        if (repository.existsByCorreo(entity.getCorreo())) {
-            throw new RuntimeException("El correo ya está registrado");
-        }
+        // Se eliminó la verificación de correo
         return repository.save(entity);
     }
 

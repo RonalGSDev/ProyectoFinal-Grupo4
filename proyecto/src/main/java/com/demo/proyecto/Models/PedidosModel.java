@@ -16,11 +16,10 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name= "pedidos")
-public class PedidosModel implements Serializable{
+public class PedidosModel implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     @Column(name = "id")
     private int id;
 
@@ -32,5 +31,4 @@ public class PedidosModel implements Serializable{
 
     @Column(name = "total")
     private double total;
-    
 }

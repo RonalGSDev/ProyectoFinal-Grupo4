@@ -1,5 +1,6 @@
 package com.demo.proyecto.Controller;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -17,7 +18,7 @@ import com.demo.proyecto.Service.DetallesPedidosService;
 
 
 @RestController
-@RequestMapping("/detallepedidos")
+@RequestMapping("/detallepedido")
 @CrossOrigin(origins = "http://localhost:3000")
 public class DetallesPedidosController {
     
@@ -38,6 +39,7 @@ public class DetallesPedidosController {
             return ResponseEntity.badRequest().body("Error en el servidor");
         }
     }  
+    
 
     @DeleteMapping("/eliminar/{idDetalle}")
     public ResponseEntity<String> deletePedidos(@PathVariable int idDetalle) {
@@ -56,6 +58,16 @@ public class DetallesPedidosController {
             return ResponseEntity.ok("Detalle del Pedido editado correctamente");
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Error en el servidor");
+        }
+    }
+
+    @PostMapping("/guardarTodo")
+    public ResponseEntity<String> saveAllDetalles(@RequestBody List<DetallesPedidosModel> entities) {
+        try {
+            this.detallePedidosService.saveAll(entities);
+            return ResponseEntity.ok("Detalles de los Pedidos guardados correctamente");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Error en el servidor: " + e.getMessage());
         }
     }
 

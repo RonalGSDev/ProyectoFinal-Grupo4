@@ -25,8 +25,20 @@ public class ClientesServiceImpl implements ClientesService {
 
     @Override
     public ClientesModel save(ClientesModel entity) {
-        if (repository.existsByCorreo(entity.getCorreo())) {
-            throw new RuntimeException("El correo ya está registrado");
+        if (entity.getId() == 0) { // Si es un nuevo cliente (id == 0)
+            if (repository.existsByCorreo(entity.getCorreo())) {
+                throw new RuntimeException("El correo ya está registrado");
+            }
+        } else { // Si es una edición
+            Optional<ClientesModel> existingClient = repository.findById(entity.getId());
+            if (existingClient.isPresent()) {
+                ClientesModel currentClient = existingClient.get();
+                // Solo verifica si el correo ha cambiado
+                if (!currentClient.getCorreo().equals(entity.getCorreo()) &&
+                    repository.existsByCorreo(entity.getCorreo())) {
+                    throw new RuntimeException("El correo ya está registrado");
+                }
+            }
         }
         return repository.save(entity);
     }

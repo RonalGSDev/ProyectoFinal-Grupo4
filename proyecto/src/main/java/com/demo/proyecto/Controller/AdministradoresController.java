@@ -26,7 +26,7 @@ public class AdministradoresController {
             this.administradoresService.save(entity);
             return ResponseEntity.ok("Administrador guardado correctamente");
         } catch (RuntimeException e) {
-            return ResponseEntity.badRequest().body(e.getMessage()); // Devuelve el mensaje de error específico
+            return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Error en el servidor");
         }
@@ -55,10 +55,11 @@ public class AdministradoresController {
     @PutMapping("/editar")
     public ResponseEntity<String> updateAdministrador(@RequestBody AdministradoresModel entity) {
         try {
-            this.administradoresService.save(entity);
+            this.administradoresService.save(entity); // No hay verificación de correo
             return ResponseEntity.ok("Administrador editado correctamente");
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Error en el servidor");
         }
     }
 }
+    

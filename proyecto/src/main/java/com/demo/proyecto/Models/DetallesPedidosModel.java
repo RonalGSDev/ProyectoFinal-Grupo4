@@ -21,11 +21,11 @@ public class DetallesPedidosModel {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "idPedido")
-    private int idPedido;
+    @Column(name = "idpedido")
+    private int idpedido;
 
-    @Column(name = "idProducto")
-    private int idProducto;
+    @Column(name = "idproducto")
+    private int idproducto;
 
     @Column(name = "cantidad")
     private int cantidad;
