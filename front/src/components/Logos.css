@@ -1,0 +1,30 @@
+.logo{
+    width: 7%;
+}
+
+@media (min-width: 1200px) {
+    .logo{
+        width: 15%;
+    }
+}
+  
+  
+@media (min-width: 768px) and (max-width: 1199px) {
+    .logo{
+        width: 20%;
+    }
+}
+  
+  
+@media (max-width: 767px) {
+    .logo{
+        width: 30%;
+    }
+}
+  
+  
+@media (max-width: 576px) {
+    .logo{
+        width: 30%;
+    }
+}

@@ -1,0 +1,16 @@
+/* index.css */
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Hace que el root tenga al menos el tamaño de la pantalla */
+}
+
+footer {
+  margin-top: auto; /* Empuja el footer hacia abajo */
+}
