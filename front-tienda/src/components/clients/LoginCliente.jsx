@@ -23,6 +23,8 @@ const LoginCliente = () => {
         if (data.idCliente !== undefined) {
           login('cliente', data.idCliente);
           localStorage.setItem('idCliente', data.idCliente);
+          localStorage.setItem('correo', email);
+          
           navigate('/pagina-cliente');
         } else {
           setErrorMessage("ID de cliente no encontrado en la respuesta.");

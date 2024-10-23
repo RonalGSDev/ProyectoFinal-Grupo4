@@ -10,6 +10,7 @@ const NavBarCliente = () => {
     localStorage.removeItem('carrito');
     localStorage.removeItem('idCliente');
     localStorage.removeItem('idPedido');
+    localStorage.removeItem('correo');
   };
 
   return (

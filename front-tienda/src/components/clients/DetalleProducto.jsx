@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
+import Comentarios from './Commentarios';
+import CardsRecomendados from './CardsRecomedados';
 
 const DetalleProducto = ({ producto, onRegresar }) => {
   const [cantidad, setCantidad] = useState(1);
@@ -103,6 +105,10 @@ const DetalleProducto = ({ producto, onRegresar }) => {
           {mensajeError && <div className="alert alert-danger mt-3">{mensajeError}</div>}
         </div>
       </div>
+
+      <CardsRecomendados />
+      <Comentarios idProducto={producto.id} />
+
     </div>
   );
 };
