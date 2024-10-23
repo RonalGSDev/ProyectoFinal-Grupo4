@@ -34,6 +34,9 @@ const NavBarAdmin = () => {
               <Link className="nav-link" to="/pagina-admin/crud-administradores">Administradores</Link>
             </li>
             <li className="nav-item">
+              <Link className="nav-link" to="/pagina-admin/reportes">Reportes</Link>
+            </li>
+            <li className="nav-item">
               <button className="nav-link btn" onClick={handleLogout}>Cerrar Sesión</button>
             </li>
           </ul>

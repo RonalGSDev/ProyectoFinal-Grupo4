@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import CRUDClientes from './CRUDClientes';
 import CRUDProductos from './CRUDProductos';
 import CRUDAdministradores from './CRUDAdministradores';
+import Reportes from './Reportes';
 
 const PaginaAdmin = () => {
   return (
@@ -23,6 +24,7 @@ const PaginaAdmin = () => {
           <Route path="crud-clientes" element={<CRUDClientes />} /> 
           <Route path="crud-productos" element={<CRUDProductos />} />
           <Route path='crud-administradores' element={<CRUDAdministradores />} />
+          <Route path='reportes' element={<Reportes />} />
         </Routes>
       </div>
       
