@@ -1,5 +1,6 @@
 package com.demo.proyecto.Service.ServiceImpl;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,11 @@ public class DetallesPedidosServiceImpl implements DetallesPedidosService{
     @Override
     public Iterable<DetallesPedidosModel> saveAll(Iterable<DetallesPedidosModel> entities) {
         return repository.saveAll(entities);
+    }
+
+    @Override
+    public List<Object[]> obtenerDetallesPedido(Integer idPedido) {
+        return repository.obtenerDetallesPedido(idPedido);
     }
     
 }

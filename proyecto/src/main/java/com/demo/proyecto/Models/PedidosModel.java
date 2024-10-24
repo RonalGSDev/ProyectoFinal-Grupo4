@@ -15,7 +15,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name= "pedidos")
+@Table(name = "pedidos")
 public class PedidosModel implements Serializable {
     
     @Id
@@ -31,4 +31,6 @@ public class PedidosModel implements Serializable {
 
     @Column(name = "total")
     private double total;
+
+    
 }

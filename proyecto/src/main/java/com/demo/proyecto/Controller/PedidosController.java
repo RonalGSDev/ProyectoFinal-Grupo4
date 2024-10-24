@@ -2,17 +2,12 @@ package com.demo.proyecto.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping; 
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.demo.proyecto.Models.PedidosModel;
 import com.demo.proyecto.Service.PedidosService;
+
+import java.sql.Date;
+import java.util.List;
 
 @RestController
 @RequestMapping("/pedidos")
@@ -55,5 +50,15 @@ public class PedidosController {
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Error en el servidor");
         }
+    }
+
+    @GetMapping("/obtener")
+    public ResponseEntity<List<Object[]>> obtenerPedidos(
+            @RequestParam(required = false) Integer clienteid,
+            @RequestParam(required = false) Integer productoid,
+            @RequestParam(required = false) Date fechainicio,
+            @RequestParam(required = false) Date fechafin) {
+        List<Object[]> resultados = this.pedidosService.obtenerPedidos(clienteid, productoid, fechainicio, fechafin);
+        return ResponseEntity.ok(resultados);
     }
 }

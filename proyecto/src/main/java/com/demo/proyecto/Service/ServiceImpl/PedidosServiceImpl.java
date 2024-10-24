@@ -1,5 +1,7 @@
 package com.demo.proyecto.Service.ServiceImpl;
 
+import java.sql.Date;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,5 +38,10 @@ public class PedidosServiceImpl implements PedidosService {
     @Override
     public Iterable<PedidosModel> saveAll(Iterable<PedidosModel> entities) {
         return repository.saveAll(entities);
+    }
+
+    @Override
+    public List<Object[]> obtenerPedidos(Integer clienteid, Integer productoid, Date fechainicio, Date fechafin) {
+        return repository.obtenerPedidos(clienteid, productoid, fechainicio, fechafin);
     }
 }

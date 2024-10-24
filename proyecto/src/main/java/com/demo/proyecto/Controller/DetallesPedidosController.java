@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.demo.proyecto.Models.DetallesPedidosModel;
@@ -69,6 +70,14 @@ public class DetallesPedidosController {
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Error en el servidor: " + e.getMessage());
         }
+    }
+
+    @GetMapping("/obtener")
+    public ResponseEntity<List<Object[]>> obtenerDetallesPedido(
+            @RequestParam(required = true) Integer idpedido) { 
+        
+        List<Object[]> resultados = detallePedidosService.obtenerDetallesPedido(idpedido);
+        return ResponseEntity.ok(resultados);
     }
 
 }

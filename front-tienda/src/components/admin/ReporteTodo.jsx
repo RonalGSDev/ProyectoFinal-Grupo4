@@ -1,101 +1,76 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, Button, Table } from 'react-bootstrap';
 import axios from 'axios';
+import ModalDetallesPedido from './ModalDetallesPedido'; // Asegúrate de importar el modal
 
 const ReporteTodo = () => {
   const [pedidos, setPedidos] = useState([]);
-  const [show, setShow] = useState(false);
-  const [productos, setProductos] = useState([]);
-  const [pedidoId, setPedidoId] = useState(null);
+  const [selectedPedidoId, setSelectedPedidoId] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    // Aquí puedes llamar a tu API para obtener los pedidos
     const fetchPedidos = async () => {
-      const response = await axios.get('http://localhost:8080/pedidos/listar');
-      setPedidos(response.data);
+      try {
+        const response = await axios.get('http://localhost:8080/pedidos/obtener');
+        setPedidos(response.data);
+      } catch (error) {
+        console.error('Error fetching pedidos:', error);
+      }
     };
 
     fetchPedidos();
   }, []);
 
-  const handleClose = () => setShow(false);
-  
-  const handleShow = async (idPedido) => {
-    setPedidoId(idPedido);
-    // Llama a la API para obtener los productos del pedido
-    const response = await axios.get(`http://localhost:8080/detallepedido/${idPedido}/listar`);
-    setProductos(response.data);
-    setShow(true);
+  // Función para abrir el modal con el ID del pedido
+  const handleShowModal = (idPedido) => {
+    setSelectedPedidoId(idPedido); // Guarda el ID del pedido seleccionado
+    setShowModal(true); // Muestra el modal
   };
 
-  return (
-    <>
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>ID Pedido</th>
-            <th>Cliente</th>
-            <th>Fecha</th>
-            <th>Cantidad de Productos</th>
-            <th>Total</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          {pedidos.map((pedido) => (
-            <tr key={pedido.id}>
-              <td>{pedido.id}</td>
-              <td>{`${pedido.nombre} ${pedido.apellidos}`}</td>
-              <td>{pedido.fechaPedido}</td>
-              <td>{pedido.cantidadProductos}</td>
-              <td>{pedido.total}</td>
-              <td>
-                <Button variant="primary" onClick={() => handleShow(pedido.id)}>
-                  Ver Detalles
-                </Button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
+  const handleCloseModal = () => setShowModal(false); // Cierra el modal
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Detalles del Pedido #{pedidoId}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Table striped bordered hover>
-            <thead>
-              <tr>
-                <th>ID Producto</th>
-                <th>Nombre</th>
-                <th>Imagen</th>
-                <th>Cantidad</th>
-                <th>Precio</th>
-                <th>Subtotal</th>
+  return (
+    <div className='mt-3 mb-4'>
+      <div className="table-responsive shadow mt-4 mb-3">
+        <table className="table table-hover table-striped text-center">
+          <thead>
+            <tr>
+              <th>ID Pedido</th>
+              <th>ID Cliente</th>
+              <th>Nombres y Apellidos</th>
+              <th>Fecha</th>
+              <th>Cantidad de Productos</th>
+              <th>Total</th>
+              <th>Ver detalles de compra</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pedidos.map((pedido) => (
+              <tr key={pedido[0]}>
+                <td>{pedido[0]}</td> 
+                <td>{pedido[1]}</td> 
+                <td>{pedido[2]}</td> 
+                <td>{pedido[3]}</td>
+                <td>{pedido[4]}</td> 
+                <td>{pedido[5].toFixed(2)}</td>
+                <td>
+                  <button className='btn btn-success' onClick={() => handleShowModal(pedido[0])}>
+                    <i className="bi bi-card-checklist"></i>
+                  </button>
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              {productos.map((producto) => (
-                <tr key={producto.id}>
-                  <td>{producto.id}</td>
-                  <td>{producto.nombre}</td>
-                  <td><img src={producto.url} alt={producto.nombre} style={{ width: '50px' }} /></td>
-                  <td>{producto.cantidad}</td>
-                  <td>{producto.precio}</td>
-                  <td>{(producto.cantidad * producto.precio).toFixed(2)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Cerrar
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Modal para mostrar detalles del pedido */}
+      {showModal && (
+        <ModalDetallesPedido 
+          idPedido={selectedPedidoId} 
+          onClose={handleCloseModal} 
+        />
+      )}
+    </div>
   );
 };
 
