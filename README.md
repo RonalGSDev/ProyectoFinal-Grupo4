@@ -290,6 +290,20 @@ Al presionar el botón de 'Agregar al carrito' de un producto, se mostrará una 
 Además, en la parte inferior de la sección de detalles del producto, habrá un área dedicada a productos recomendados y una sección de comentarios, donde el cliente podrá ver qué artículos están en tendencia, leer comentarios de otros usuarios y dejar su propia opinión sobre el producto.
 ![image](https://github.com/user-attachments/assets/3b337981-8350-48e2-ac96-d70cc16ab24c)
 
+##### Área del carrito
+Al presionar el botón de carrito en la barra de navegación, seremos redirigidos a la página del carrito, donde podremos ver los productos que deseamos comprar. Se mostrará la información de cada producto, el subtotal correspondiente y el total general. También tendremos la opción de eliminar productos del carrito y, por último, contaremos con un botón para realizar la compra.
+![image](https://github.com/user-attachments/assets/0b146588-623f-45a6-88cb-ede95003f7cf)
+
+> [!NOTE]
+> Al presionar el botón de 'Realizar pedido', toda la información del pedido y los productos seleccionados se enviarán a la base de datos, se mostrará el siguiente mensaje y el carrito se vaciará.
+> ![image](https://github.com/user-attachments/assets/a423b7b8-90af-4bbd-9f81-fc2fbaa57635)
+> ![image](https://github.com/user-attachments/assets/28a89e9b-8104-4ad7-8d29-38a14c7aa350)
+
+> [!IMPORTANT]
+> Después de completar la compra, podremos observar que el trigger que descuenta los productos adquiridos del stock se activa.
+> ![image](https://github.com/user-attachments/assets/b4d052a0-b007-44c1-bc20-30accceadcda)
+
+
 
 
 ### 6.3. Área de Administradores
