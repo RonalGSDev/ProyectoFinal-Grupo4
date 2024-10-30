@@ -308,4 +308,20 @@ Al presionar el botón de carrito en la barra de navegación, seremos redirigido
 
 ### 6.3. Área de Administradores
 
+#### 6.3.1. Login de Administradores
+Este es el inicio de sesión para administradores, donde solo los usuarios con credenciales de administrador podrán acceder a la página principal de administración.
+![image](https://github.com/user-attachments/assets/f702ed26-04f8-4a70-a2da-b462d701f016)
+
+> [!WARNING]
+> Si ingresan credenciales incorrectas, se mostrará un mensaje indicando que las credenciales no son válidas.
+> ![image](https://github.com/user-attachments/assets/8c230fab-971b-4936-8c1b-fef1ca86b32c)
+
+#### 6.3.2. Sección de Administradores
+
+##### Área de administradores
+Después de ingresar las credenciales correctas, seremos dirigidos a una página para gestionar datos específicos de los administradores. La barra de navegación ofrecerá diferentes opciones: 'Clientes' (para el CRUD de clientes), 'Productos' (para el CRUD de productos), 'Administradores' (para el CRUD de administradores), 'Reportes' y 'Cerrar sesión'.
+![image](https://github.com/user-attachments/assets/4170ab2e-556c-45a9-a4a8-608177b4c17f)
+
+
+
 
