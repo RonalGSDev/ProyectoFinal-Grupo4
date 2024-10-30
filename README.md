@@ -1,4 +1,4 @@
-# Documentacion Proyecto Final Grupo 4
+# Documentacion Proyecto Final - Grupo 4
 
 # Entregables
 
@@ -187,7 +187,7 @@ DELIMITER ;
 ## 4. Mockups
 [MOCKUPS.pdf](https://github.com/user-attachments/files/17372672/MOCKUPS.pdf)
 
-## 5. Documentacion y pruebas de la aplicación web
+## 5. Pruebas de uso de la aplicación web
 
 ### 5.1. Página Princial
 
