@@ -343,10 +343,49 @@ Al presionar el botón 'Agregar cliente', se mostrará un modal con un formulari
 > Al ingresar la información del cliente correctamente y hacer clic en el botón 'Agregar cliente', se mostrará la siguiente alerta:
 > ![image](https://github.com/user-attachments/assets/cab95295-2009-423e-a3c0-572cedf44dd7)
 
+Al presionar el botón 'Editar' de un cliente específico, se abrirá nuevamente el modal con el formulario. La diferencia es que la información del cliente seleccionado ya estará cargada en el formulario, lo que nos permitirá realizar los cambios necesarios.
+![image](https://github.com/user-attachments/assets/55e2b9f6-7aaf-47ef-8d11-e056cbc7d602)
+
+> [!NOTE]
+> Después de realizar los cambios deseados en la información del cliente y hacer clic en el botón 'Editar cliente', se mostrará la siguiente alerta:
+> ![image](https://github.com/user-attachments/assets/47805757-ec65-455f-8957-f3c59dccaeb6)
+
+
+> [!WARNING]
+> Al presionar el botón 'Eliminar' de un cliente específico, se mostrará una alerta preguntando: '¿Estás seguro? No podrás deshacer esta acción.' También se ofrecerá la opción de 'Eliminar' o 'Cancelar'. Si se presiona el botón 'Cancelar', la alerta se cerrará sin realizar ninguna acción. Sin embargo, si se elige 'Eliminar', el cliente se eliminará de forma permanente.
+> ![image](https://github.com/user-attachments/assets/e3d47837-22ef-455d-886d-53f50be44d71)
+
+> [!NOTE]
+> Si se está seguro de eliminar al cliente, aparecerá la siguiente alerta:
+> ![image](https://github.com/user-attachments/assets/78fda84f-4a7a-4586-8a99-038e33ae91a2)
+
 
 ##### Página productos (CRUD Productos)
 Al presionar el botón 'Productos' en la barra de navegación, accederemos al CRUD de productos, donde podremos realizar acciones como insertar un nuevo producto, editar la información de un producto existente o eliminar un producto.
-![image](https://github.com/user-attachments/assets/4bb70a5a-9c4d-4e57-87d0-53f9d87d3f59)
+![image](https://github.com/user-attachments/assets/fedd59b9-d6f9-41dc-842b-6e192cfc9189)
+
+Al presionar el botón 'Agregar producto', se mostrará un modal con un formulario donde podremos ingresar la información del nuevo producto que se está registrando.
+![image](https://github.com/user-attachments/assets/570af58b-8611-4838-a348-47d71db2bced)
+
+> [!NOTE]
+> Al ingresar la información del producto correctamente y hacer clic en el botón 'Agregar producto', se mostrará la siguiente alerta:
+![image](https://github.com/user-attachments/assets/74ff147f-071a-4452-8141-128ab654ffc4)
+
+Al presionar el botón 'Editar' de un producto específico, se abrirá nuevamente el modal con el formulario. La diferencia es que la información del producto seleccionado ya estará cargada en el formulario, lo que nos permitirá realizar los cambios necesarios.
+![image](https://github.com/user-attachments/assets/048d8572-6b91-4586-8fac-53537ab05bad)
+
+> [!NOTE]
+> Después de realizar los cambios deseados en la información del producto y hacer clic en el botón 'Editar producto', se mostrará la siguiente alerta:
+![image](https://github.com/user-attachments/assets/e984cb27-27cf-4129-9dc3-29ed0ba9622d)
+
+> [!WARNING]
+> Al presionar el botón 'Eliminar' de un producto específico, se mostrará una alerta preguntando: '¿Estás seguro? No podrás deshacer esta acción.' También se ofrecerá la opción de 'Eliminar' o 'Cancelar'. Si se presiona el botón 'Cancelar', la alerta se cerrará sin realizar ninguna acción. Sin embargo, si se elige 'Eliminar', el producto se eliminará de forma permanente.
+![image](https://github.com/user-attachments/assets/ac4cc3d5-41a6-4582-95af-c09236859d96)
+
+> [!NOTE]
+> Si se está seguro de eliminar el producto, aparecerá la siguiente alerta:
+![image](https://github.com/user-attachments/assets/ae69e011-4d94-42bb-b490-7a1bb2281eb8)
+
 
 
 ##### Página administradores (CRUD Administradores)
