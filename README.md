@@ -6,7 +6,7 @@
 
 ![image](https://github.com/user-attachments/assets/1e61e08d-d3c4-4ce1-977e-4374fd1e01b9)
 
-## 2. DDL Y DML
+## 2. Base de Datos Relacional
 
 ### 2.1. DDL
 ````
@@ -180,19 +180,72 @@ END //
 DELIMITER ;
 ````
 
+## 3. Base de Datos NoSql
 
-## 3. Wireframes
+### 3.1. Esquema 
+````
+const mongoose = require('mongoose');
+
+const comentarios = new mongoose.Schema({
+  id: { type: String, required: true, unique: true },
+  idCliente: { type: String, required: true },
+  nombres: { type: String, required: true },
+  idProducto: { type: String, required: true },
+  calificacion: { type: Number, required: true, min: 1, max: 5 }, 
+  comentario: { type: String, required: true },
+  fecha: { type: Date, default: Date.now }
+});
+
+const Comentarios = mongoose.model('Comentarios', comentarios); 
+
+module.exports = Comentarios; 
+
+````
+### 3.1. Ejemplo usando el Esquema
+````
+[
+  {
+    "id": "67180d205169f2e2abf40cf1",
+    "idCliente": "1",
+    "nombres": "Ronal Gómez",
+    "idProducto": "3",
+    "calificacion": 5.0,
+    "comentario": "Este es un buen producto, me ayudo con mis tareas.",
+    "fecha": "2024-10-22T20:37:52.510+00:00"
+  },
+  {
+    "id": "67180defc65cea6432997552",
+    "idCliente": "2",
+    "nombres": "Juan Perez",
+    "idProducto": "2",
+    "calificacion": 2.0,
+    "comentario": "buen producto 5.",
+    "fecha": "2024-10-22T00:00:00.000+00:00"
+  },
+  {
+    "id": "6718244b917b8b69e5c3c8f0",
+    "idCliente": "4",
+    "nombres": "Juan Perez",
+    "idProducto": "12",
+    "calificacion": 1.0,
+    "comentario": "El sonido no es tan bueno, y tardó mucho en llegar a mi casa.",
+    "fecha": "2024-10-22T00:00:00.000+00:00"
+  }
+]
+````
+
+## 4. Wireframes
 [WIREFRAMES.pdf](https://github.com/user-attachments/files/17372670/WIREFRAMES.pdf)
 
-## 4. Mockups
+## 5. Mockups
 [MOCKUPS.pdf](https://github.com/user-attachments/files/17372672/MOCKUPS.pdf)
 
-## 5. Pruebas de uso de la aplicación web
+## 6. Pruebas de uso de la aplicación web
 
-### 5.1. Página Princial
+### 6.1. Página Princial
 
-### 5.2. Área de Clientes
+### 6.2. Área de Clientes
 
-### 5.3. Área de Administradores
+### 6.3. Área de Administradores
 
 
