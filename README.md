@@ -318,9 +318,45 @@ Este es el inicio de sesión para administradores, donde solo los usuarios con c
 
 #### 6.3.2. Sección de Administradores
 
-##### Área de administradores
+##### Página principal administradores
 Después de ingresar las credenciales correctas, seremos dirigidos a una página para gestionar datos específicos de los administradores. La barra de navegación ofrecerá diferentes opciones: 'Clientes' (para el CRUD de clientes), 'Productos' (para el CRUD de productos), 'Administradores' (para el CRUD de administradores), 'Reportes' y 'Cerrar sesión'.
 ![image](https://github.com/user-attachments/assets/4170ab2e-556c-45a9-a4a8-608177b4c17f)
+
+##### Página clientes (CRUD Clientes)
+Al presionar el botón 'Clientes' en la barra de navegación, accederemos al CRUD de clientes, donde podremos realizar acciones como insertar un nuevo cliente, editar la información de un cliente existente o eliminar un cliente.
+![image](https://github.com/user-attachments/assets/56b7038a-44d0-407c-8404-8615b951cf08)
+
+
+Al presionar el botón 'Agregar cliente', se mostrará un modal con un formulario donde podremos ingresar la información del nuevo cliente que se está registrando.
+
+> [!IMPORTANT]
+> El correo ingresado para el nuevo cliente no debe coincidir con el registrado por otro cliente.
+
+![image](https://github.com/user-attachments/assets/ee67844e-d844-4db3-89a9-0947fff4dda8)
+
+
+> [!CAUTION]
+> Si se ingresa un correo que ya está en uso por otro cliente, se mostrará una alerta indicando el conflicto.
+> ![image](https://github.com/user-attachments/assets/e918a981-0d2f-453c-941f-11505bbc4413)
+
+> [!NOTE]
+> Al ingresar la información del cliente correctamente y hacer clic en el botón 'Agregar cliente', se mostrará la siguiente alerta:
+> ![image](https://github.com/user-attachments/assets/cab95295-2009-423e-a3c0-572cedf44dd7)
+
+
+##### Página productos (CRUD Productos)
+Al presionar el botón 'Productos' en la barra de navegación, accederemos al CRUD de productos, donde podremos realizar acciones como insertar un nuevo producto, editar la información de un producto existente o eliminar un producto.
+![image](https://github.com/user-attachments/assets/4bb70a5a-9c4d-4e57-87d0-53f9d87d3f59)
+
+
+##### Página administradores (CRUD Administradores)
+Al presionar el botón 'Administradores' en la barra de navegación, accederemos al CRUD de administradores, donde podremos realizar acciones como insertar un nuevo administrador, editar la información de un administrador existente o eliminar un administrador.
+![image](https://github.com/user-attachments/assets/4e0bad34-d82b-4e7c-8726-639fdf5df2b1)
+
+
+##### Página reportes (Reporte de ventas filtado por clientes, productos, rango de fechas y comentarios)
+Al presionar el botón 'Reportes' en la barra de navegación, accederemos a la página donde podremos mostrar reportes de las órdenes realizadas por los clientes. La visualización del reporte se dividirá en pestañas: 'Ver todo', 'Filtrar por cliente', 'Filtrar por producto', 'Filtrar por un rango de fechas' y 'Ver los comentarios de los productos'.
+
 
 
 
