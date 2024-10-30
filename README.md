@@ -248,6 +248,48 @@ La aplicación web comienza con una página principal donde los usuarios pueden 
 
 ### 6.2. Área de Clientes
 
+#### 6.2.1 Login de Clientes
+
+Este es el inicio de sesión del cliente, donde los usuarios pueden acceder o crear una cuenta para ingresar a la página principal y realizar compras.
+![image](https://github.com/user-attachments/assets/943b8ea6-2d53-4ef3-88e6-e06c79b2c261)
+
+> [!WARNING]
+> Si ingresan credenciales incorrectas, se mostrará un mensaje indicando que las credenciales no son válidas.
+> ![image](https://github.com/user-attachments/assets/5cd89b57-820e-4157-bd47-b9dc10a983dc)
+
+Al presionar el botón de 'Crear cuenta', la página redirigirá al usuario a un formulario que deberá completar para registrar su cuenta y poder acceder a la página principal para realizar compras.
+
+> [!IMPORTANT]
+> El correo ingresado por el usuario no debe coincidir con el registrado por otro usuario.
+
+![image](https://github.com/user-attachments/assets/dc511f5f-0672-49f8-9e55-e31c9f18870f)
+
+> [!CAUTION]
+> Si se ingresa un correo que ya está en uso por otro usuario, se mostrará una alerta indicando el conflicto.
+> ![image](https://github.com/user-attachments/assets/8c2266e8-8342-4cd6-8ce9-13c0b7dbffd5)
+
+#### 6.2.2. Sección de compras
+
+Después de ingresar las credenciales correctas, seremos dirigidos a una página para realizar compras, que será muy similar a la página principal. La diferencia radicará en que la barra de navegación ofrecerá diferentes opciones, y se habilitará un botón para añadir productos al carrito.
+![image](https://github.com/user-attachments/assets/be618e2e-88ac-4721-91cc-a14ff71b6042)
+
+
+Al presionar el botón de 'Agregar al carrito' de un producto, se mostrará una vista con información más detallada sobre el artículo, así como la opción de ingresar la cantidad que se desea comprar. También habrá un botón de 'Comprar', que se encargará de enviar la información relevante del pedido al carrito.
+![image](https://github.com/user-attachments/assets/c6fe518a-a9a7-4878-9dac-4d5aecae1483)
+
+> [!WARNING]
+> Al intentar realizar una compra en la que la cantidad del producto excede el stock disponible, se mostrará el siguiente mensaje:
+> ![image](https://github.com/user-attachments/assets/a55c6903-cf6a-4e2d-9437-20fc2f464a66)
+
+> [!NOTE]
+> Al ingresar una cantidad adecuada, se mostrará el siguiente mensaje:
+> ![image](https://github.com/user-attachments/assets/b97f547d-fe6f-409f-b2b5-51acd6705159)
+
+
+Además, en la parte inferior de la sección de detalles del producto, habrá un área dedicada a productos recomendados y una sección de comentarios, donde el cliente podrá ver qué artículos están en tendencia, leer comentarios de otros usuarios y dejar su propia opinión sobre el producto.
+![image](https://github.com/user-attachments/assets/aeab9c4d-7457-478a-9a85-dc309a293e84)
+
+
 ### 6.3. Área de Administradores
 
 
