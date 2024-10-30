@@ -270,10 +270,11 @@ Al presionar el botón de 'Crear cuenta', la página redirigirá al usuario a un
 
 #### 6.2.2. Sección de compras
 
+##### Área de compras
 Después de ingresar las credenciales correctas, seremos dirigidos a una página para realizar compras, que será muy similar a la página principal. La diferencia radicará en que la barra de navegación ofrecerá diferentes opciones, y se habilitará un botón para añadir productos al carrito.
 ![image](https://github.com/user-attachments/assets/be618e2e-88ac-4721-91cc-a14ff71b6042)
 
-
+##### Área de informacion del producto
 Al presionar el botón de 'Agregar al carrito' de un producto, se mostrará una vista con información más detallada sobre el artículo, así como la opción de ingresar la cantidad que se desea comprar. También habrá un botón de 'Comprar', que se encargará de enviar la información relevante del pedido al carrito.
 ![image](https://github.com/user-attachments/assets/c6fe518a-a9a7-4878-9dac-4d5aecae1483)
 
@@ -285,9 +286,10 @@ Al presionar el botón de 'Agregar al carrito' de un producto, se mostrará una 
 > Al ingresar una cantidad adecuada, se mostrará el siguiente mensaje:
 > ![image](https://github.com/user-attachments/assets/b97f547d-fe6f-409f-b2b5-51acd6705159)
 
-
+##### Área de productos recomendados y comentarios
 Además, en la parte inferior de la sección de detalles del producto, habrá un área dedicada a productos recomendados y una sección de comentarios, donde el cliente podrá ver qué artículos están en tendencia, leer comentarios de otros usuarios y dejar su propia opinión sobre el producto.
-![image](https://github.com/user-attachments/assets/aeab9c4d-7457-478a-9a85-dc309a293e84)
+![image](https://github.com/user-attachments/assets/3b337981-8350-48e2-ac96-d70cc16ab24c)
+
 
 
 ### 6.3. Área de Administradores
