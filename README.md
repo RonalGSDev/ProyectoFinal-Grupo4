@@ -233,7 +233,6 @@ module.exports = Comentarios;
   }
 ]
 ````
-
 ## 4. Wireframes
 [WIREFRAMES.pdf](https://github.com/user-attachments/files/17372670/WIREFRAMES.pdf)
 
@@ -243,6 +242,9 @@ module.exports = Comentarios;
 ## 6. Pruebas de uso de la aplicación web
 
 ### 6.1. Página Princial
+
+La aplicación web comienza con una página principal donde los usuarios pueden elegir si desean ingresar como Cliente o Administrador. Dependiendo de la selección, el usuario es redirigido a un formulario de login específico.
+![image](https://github.com/user-attachments/assets/d328d66d-1be0-4dcc-a02a-5f7cae881520)
 
 ### 6.2. Área de Clientes
 
