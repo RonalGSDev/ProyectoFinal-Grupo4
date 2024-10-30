@@ -4,6 +4,7 @@ import ReporteTodo from './ReporteTodo';
 import ReporteCliente from './ReporteCliente';
 import ReporteProducto from './ReporteProducto';
 import ReportePorFecha from './ReportePorFecha';
+import ComentariosProductos from './ComentariosProductos';
 
 const Reporte = () => {
   return (
@@ -32,7 +33,13 @@ const Reporte = () => {
           <div className="tab-content p-3">
             <h2 className='h2 mt-2 mb-3'>Buscar por Rango de Fecha</h2>
             <ReportePorFecha />
-           
+          </div>
+        </Tab>
+
+        <Tab eventKey="comentarios" title="Comentarios">
+          <div className="tab-content p-3">
+            <h2 className='h2 mt-2 mb-3'>Comentarios de Productos</h2>
+            <ComentariosProductos />
           </div>
         </Tab>
       </Tabs>

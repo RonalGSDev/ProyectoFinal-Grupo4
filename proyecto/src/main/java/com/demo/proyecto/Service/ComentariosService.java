@@ -7,5 +7,5 @@ public interface ComentariosService {
     List<ComentariosModel> getAllComentarios();
     ComentariosModel saveComentario(ComentariosModel comentario);
     List<ComentariosModel> getComentariosByIdProducto(String idProducto);
-    List<ComentariosModel> getMejoresCalificados(); // Nuevo método
+    List<ComentariosModel> getMejoresCalificados();
 }

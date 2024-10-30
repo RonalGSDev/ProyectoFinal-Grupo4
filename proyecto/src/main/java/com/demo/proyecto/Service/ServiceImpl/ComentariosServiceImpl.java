@@ -1,7 +1,6 @@
 package com.demo.proyecto.Service.ServiceImpl;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,14 +32,61 @@ public class ComentariosServiceImpl implements ComentariosService {
 
     @Override
     public List<ComentariosModel> getMejoresCalificados() {
-        // Obtiene los comentarios únicos por idProducto con la calificación más alta y limita a 4
-        return comentariosRepository.findAll().stream()
-            .collect(Collectors.groupingBy(ComentariosModel::getIdProducto)) // Agrupa por idProducto
-            .values().stream()
-            .map(comentarios -> comentarios.stream().max((c1, c2) -> Double.compare(c1.getCalificacion(), c2.getCalificacion())).orElse(null)) // Obtiene el mejor comentario por grupo
-            .filter(comentario -> comentario != null) // Filtra comentarios nulos
-            .sorted((c1, c2) -> Double.compare(c2.getCalificacion(), c1.getCalificacion())) // Ordena por calificación descendente
-            .limit(4) // Limita a los primeros 5
-            .collect(Collectors.toList()); // Recoge en una lista
+        // Obtener todos los comentarios
+        List<ComentariosModel> comentarios = comentariosRepository.findAll();
+
+        // Crear un mapa para almacenar la suma de calificaciones y el conteo de
+        // comentarios por idProducto
+        Map<String, Double> sumaCalificaciones = new HashMap<>();
+        Map<String, Integer> conteoComentarios = new HashMap<>();
+
+        // Iterar sobre cada comentario
+        for (ComentariosModel comentario : comentarios) {
+            String idProducto = comentario.getIdProducto();
+            double calificacion = comentario.getCalificacion();
+
+            // Sumar las calificaciones
+            sumaCalificaciones.put(idProducto, sumaCalificaciones.getOrDefault(idProducto, 0.0) + calificacion);
+
+            // Contar el número de comentarios
+            conteoComentarios.put(idProducto, conteoComentarios.getOrDefault(idProducto, 0) + 1);
+        }
+
+        // Crear una lista para almacenar los promedios y el conteo de comentarios
+        List<Map.Entry<String, Double>> promediosConConteo = new ArrayList<>();
+        for (String idProducto : sumaCalificaciones.keySet()) {
+            int conteo = conteoComentarios.get(idProducto);
+            if (conteo > 0) { // Solo considerar productos con comentarios
+                double promedio = sumaCalificaciones.get(idProducto) / conteo;
+                promediosConConteo.add(new AbstractMap.SimpleEntry<>(idProducto, promedio));
+            }
+        }
+
+        // Ordenar por cantidad de comentarios en primer lugar, y luego por promedio
+        promediosConConteo.sort((a, b) -> {
+            int conteoA = conteoComentarios.get(a.getKey());
+            int conteoB = conteoComentarios.get(b.getKey());
+            if (conteoB != conteoA) {
+                return Integer.compare(conteoB, conteoA); // Ordenar por cantidad de comentarios
+            }
+            return Double.compare(b.getValue(), a.getValue()); // Ordenar por promedio
+        });
+
+        // Obtener los primeros 4 productos
+        List<ComentariosModel> mejoresCalificados = new ArrayList<>();
+        for (int i = 0; i < Math.min(4, promediosConConteo.size()); i++) {
+            String idProducto = promediosConConteo.get(i).getKey();
+            // Obtener un comentario asociado para el producto
+            ComentariosModel comentarioEjemplo = comentarios.stream()
+                    .filter(comentario -> comentario.getIdProducto().equals(idProducto))
+                    .findFirst()
+                    .orElse(null);
+            if (comentarioEjemplo != null) {
+                mejoresCalificados.add(comentarioEjemplo);
+            }
+        }
+
+        return mejoresCalificados;
     }
+
 }

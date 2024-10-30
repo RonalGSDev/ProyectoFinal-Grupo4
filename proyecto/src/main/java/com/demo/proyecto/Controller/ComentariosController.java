@@ -45,5 +45,4 @@ public class ComentariosController {
         List<ComentariosModel> mejoresCalificados = comentariosService.getMejoresCalificados();
         return new ResponseEntity<>(mejoresCalificados, HttpStatus.OK);
     }
-
 }
