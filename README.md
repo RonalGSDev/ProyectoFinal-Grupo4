@@ -480,9 +480,27 @@ Al hacer clic en la pestaña de comentarios, podremos ver las opiniones que los 
 > ![image](https://github.com/user-attachments/assets/d65d81de-c87a-4507-bf02-4cde1432cc19)
 
 
+## 7. Informe Final de Tecnologías Utilizadas
 
+### 7.1. Base de Datos:
+#### MyPhpAdmin:
+Se utilizó MyPhpAdmin para realizar el CRUD (Crear, Leer, Actualizar y Eliminar) de los clientes, productos, administradores, pedidos y detalles de pedidos. Además, se implementaron triggers y procedimientos almacenados para optimizar las operaciones y garantizar la integridad de los datos.
 
+#### MongoDB:
+MongoDB se utilizó para almacenar los comentarios de los clientes hacia los productos. Además, es una parte fundamental para implementar productos recomendados, basándose en las calificaciones anteriores de los clientes hacia esos productos. Su naturaleza NoSQL permite almacenar datos no estructurados de manera flexible, facilitando tanto la interacción como el análisis de las opiniones y preferencias de los usuarios.
 
+### 7.2. Backend:
+
+#### SpringBoot
+En el backend, utilizamos Spring Boot, que nos ayudó en la creación de diferentes endpoints para almacenar, editar y eliminar información. Este framework facilita la configuración y el desarrollo de aplicaciones Java, y se conecta tanto con la base de datos relacional como con la base de datos NoSQL, permitiendo una gestión eficiente de los datos en diferentes formatos.
+
+### 7.3. FrontEnd:
+
+#### React
+En el frontend, utilizamos React, lo que nos permitió crear una interfaz visual atractiva y dinámica para interactuar con nuestros diferentes endpoints del backend. React facilita la construcción de componentes reutilizables y la gestión del estado de la aplicación.
+
+#### Herramientas Visuales
+También empleamos herramientas visuales como Bootstrap y SweetAlert, junto con componentes de diversas librerías de React, para mejorar la experiencia del usuario y la estética de la aplicación.
 
 
 
