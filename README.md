@@ -331,9 +331,7 @@ Al presionar el botón 'Agregar cliente', se mostrará un modal con un formulari
 
 > [!IMPORTANT]
 > El correo ingresado para el nuevo cliente no debe coincidir con el registrado por otro cliente.
-
 ![image](https://github.com/user-attachments/assets/ee67844e-d844-4db3-89a9-0947fff4dda8)
-
 
 > [!CAUTION]
 > Si se ingresa un correo que ya está en uso por otro cliente, se mostrará una alerta indicando el conflicto.
@@ -350,7 +348,6 @@ Al presionar el botón 'Editar' de un cliente específico, se abrirá nuevamente
 > Después de realizar los cambios deseados en la información del cliente y hacer clic en el botón 'Editar cliente', se mostrará la siguiente alerta:
 > ![image](https://github.com/user-attachments/assets/47805757-ec65-455f-8957-f3c59dccaeb6)
 
-
 > [!WARNING]
 > Al presionar el botón 'Eliminar' de un cliente específico, se mostrará una alerta preguntando: '¿Estás seguro? No podrás deshacer esta acción.' También se ofrecerá la opción de 'Eliminar' o 'Cancelar'. Si se presiona el botón 'Cancelar', la alerta se cerrará sin realizar ninguna acción. Sin embargo, si se elige 'Eliminar', el cliente se eliminará de forma permanente.
 > ![image](https://github.com/user-attachments/assets/e3d47837-22ef-455d-886d-53f50be44d71)
@@ -358,6 +355,7 @@ Al presionar el botón 'Editar' de un cliente específico, se abrirá nuevamente
 > [!NOTE]
 > Si se está seguro de eliminar al cliente, aparecerá la siguiente alerta:
 > ![image](https://github.com/user-attachments/assets/78fda84f-4a7a-4586-8a99-038e33ae91a2)
+
 
 
 ##### Página productos (CRUD Productos)
@@ -369,18 +367,18 @@ Al presionar el botón 'Agregar producto', se mostrará un modal con un formular
 
 > [!NOTE]
 > Al ingresar la información del producto correctamente y hacer clic en el botón 'Agregar producto', se mostrará la siguiente alerta:
-![image](https://github.com/user-attachments/assets/74ff147f-071a-4452-8141-128ab654ffc4)
+> ![image](https://github.com/user-attachments/assets/74ff147f-071a-4452-8141-128ab654ffc4)
 
 Al presionar el botón 'Editar' de un producto específico, se abrirá nuevamente el modal con el formulario. La diferencia es que la información del producto seleccionado ya estará cargada en el formulario, lo que nos permitirá realizar los cambios necesarios.
 ![image](https://github.com/user-attachments/assets/048d8572-6b91-4586-8fac-53537ab05bad)
 
 > [!NOTE]
 > Después de realizar los cambios deseados en la información del producto y hacer clic en el botón 'Editar producto', se mostrará la siguiente alerta:
-![image](https://github.com/user-attachments/assets/e984cb27-27cf-4129-9dc3-29ed0ba9622d)
+> ![image](https://github.com/user-attachments/assets/e984cb27-27cf-4129-9dc3-29ed0ba9622d)
 
 > [!WARNING]
 > Al presionar el botón 'Eliminar' de un producto específico, se mostrará una alerta preguntando: '¿Estás seguro? No podrás deshacer esta acción.' También se ofrecerá la opción de 'Eliminar' o 'Cancelar'. Si se presiona el botón 'Cancelar', la alerta se cerrará sin realizar ninguna acción. Sin embargo, si se elige 'Eliminar', el producto se eliminará de forma permanente.
-![image](https://github.com/user-attachments/assets/ac4cc3d5-41a6-4582-95af-c09236859d96)
+> ![image](https://github.com/user-attachments/assets/ac4cc3d5-41a6-4582-95af-c09236859d96)
 
 > [!NOTE]
 > Si se está seguro de eliminar el producto, aparecerá la siguiente alerta:
@@ -390,7 +388,44 @@ Al presionar el botón 'Editar' de un producto específico, se abrirá nuevament
 
 ##### Página administradores (CRUD Administradores)
 Al presionar el botón 'Administradores' en la barra de navegación, accederemos al CRUD de administradores, donde podremos realizar acciones como insertar un nuevo administrador, editar la información de un administrador existente o eliminar un administrador.
-![image](https://github.com/user-attachments/assets/4e0bad34-d82b-4e7c-8726-639fdf5df2b1)
+![image](https://github.com/user-attachments/assets/cedb40d3-bba1-4ea0-abf3-d4ee8f1ee4f5)
+
+Al presionar el botón 'Agregar administrador', se mostrará un modal con un formulario donde podremos ingresar la información del nuevo administrador que se está registrando.
+
+> [!IMPORTANT]
+> El correo ingresado para el nuevo administrador no debe coincidir con el registrado por otro administrador.
+
+![image](https://github.com/user-attachments/assets/8053eae5-2536-4f2d-bbdd-c0d0aaae6776)
+
+> [!CAUTION]
+> Si se ingresa un correo que ya está en uso por otro administrador, se mostrará una alerta indicando el conflicto.
+> ![image](https://github.com/user-attachments/assets/33fc5cff-dd07-46c8-a8a0-68dcd90a702c)
+
+> [!NOTE]
+> Al ingresar la información del administrador correctamente y hacer clic en el botón 'Agregar administrador', se mostrará la siguiente alerta:
+> ![image](https://github.com/user-attachments/assets/339b55d4-b9f8-45a0-a2a8-93965265ed1e)
+
+Al presionar el botón 'Editar' de un administrador específico, se abrirá nuevamente el modal con el formulario. La diferencia es que la información del administrador seleccionado ya estará cargada en el formulario, lo que nos permitirá realizar los cambios necesarios.
+![image](https://github.com/user-attachments/assets/a1f11ac3-d83f-4bda-9473-b07a9e511e0d)
+
+> [!NOTE]
+> Después de realizar los cambios deseados en la información del administrador y hacer clic en el botón 'Editar administrador', se mostrará la siguiente alerta:
+> ![image](https://github.com/user-attachments/assets/24595cc5-c39a-4d6a-99e7-df2ff3646583)
+
+
+> [!WARNING]
+> Al presionar el botón 'Eliminar' de un administrador específico, se mostrará una alerta preguntando: '¿Estás seguro? No podrás deshacer esta acción.' También se ofrecerá la opción de 'Eliminar' o 'Cancelar'. Si se presiona el botón 'Cancelar', la alerta se cerrará sin realizar ninguna acción. Sin embargo, si se elige 'Eliminar', el administrador se eliminará de forma permanente.
+> ![image](https://github.com/user-attachments/assets/450708b9-531f-4118-80ca-f7ae9c985f01)
+
+> [!NOTE]
+> Si se está seguro de eliminar al administrador, aparecerá la siguiente alerta:
+> ![image](https://github.com/user-attachments/assets/0b6941a6-61a4-4bf7-b906-354eef295980)
+
+
+
+
+
+
 
 
 ##### Página reportes (Reporte de ventas filtado por clientes, productos, rango de fechas y comentarios)
