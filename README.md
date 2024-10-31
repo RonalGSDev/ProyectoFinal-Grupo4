@@ -430,6 +430,57 @@ Al presionar el botón 'Editar' de un administrador específico, se abrirá nuev
 
 ##### Página reportes (Reporte de ventas filtado por clientes, productos, rango de fechas y comentarios)
 Al presionar el botón 'Reportes' en la barra de navegación, accederemos a la página donde podremos mostrar reportes de las órdenes realizadas por los clientes. La visualización del reporte se dividirá en pestañas: 'Ver todo', 'Filtrar por cliente', 'Filtrar por producto', 'Filtrar por un rango de fechas' y 'Ver los comentarios de los productos'.
+![image](https://github.com/user-attachments/assets/b2f439eb-9bfb-4ea9-97f0-ee2e1adb057f)
+
+> [!NOTE]
+> Al hacer clic en el botón verde para ver el detalle del pedido, se abrirá un modal que mostrará la información completa de los productos incluidos en el pedido realizado por el cliente. También se presentarán detalles importantes, como el precio de cada producto, la cantidad total de productos comprados y el subtotal.
+> ![image](https://github.com/user-attachments/assets/3e18348d-4e1f-4309-aba0-0fd7bc45878c)
+
+
+Al hacer clic en la pestaña de cliente, accederemos a la opción de filtrar los pedidos según el ID del cliente ingresado.
+![image](https://github.com/user-attachments/assets/0f5c78c6-ca11-4835-82e0-c579d7391015)
+
+> [!WARNING]
+> Si no se ingresa ningún ID, aparecerá la siguiente alerta:
+> ![image](https://github.com/user-attachments/assets/e4993537-300f-4b8c-9231-f12766297405)
+
+> [!NOTE]
+> Al ingresar un ID de cliente válido, se mostrará un listado de los pedidos realizados por ese cliente. Además, al hacer clic en el botón verde de "Ver detalles", podremos acceder a la información específica de los productos adquiridos.
+> ![image](https://github.com/user-attachments/assets/c728271a-e691-472f-9185-60115eb84870)
+
+
+Al hacer clic en la pestaña de producto, accederemos a la opción de filtrar los pedidos según el ID del producto ingresado.
+![image](https://github.com/user-attachments/assets/19672ce6-1553-47af-bdc9-d28913ace487)
+
+> [!WARNING]
+> Si no se ingresa ningún ID, aparecerá la siguiente alerta:
+> ![image](https://github.com/user-attachments/assets/3fd8dfad-79bc-4c5c-b750-44e64f08af8e)
+
+> [!NOTE]
+> Al ingresar un ID de producto válido, se mostrará un listado de los pedidos en los que aparezca el ID del producto ingresado. Además, al hacer clic en el botón verde de "Ver detalles", podremos acceder a la información específica de los productos adquiridos.
+> ![image](https://github.com/user-attachments/assets/b62742bc-5efa-4043-bd0a-4d7fbf363384)
+
+
+Al hacer clic en la pestaña de rango de fecha, accederemos a la opción de filtrar los pedidos un rango de fecha establecido por el administrador.
+![image](https://github.com/user-attachments/assets/6e5371a2-4997-45de-963a-37f678730c49)
+
+> [!WARNING]
+> Si no se ingresa ningún rango de fecha, aparecerá la siguiente alerta:
+> ![image](https://github.com/user-attachments/assets/584c513d-232e-487b-a187-3f5d4d144803)
+
+> [!NOTE]
+> Al ingresar un rango de fecha válido, se mostrará un listado de los pedidos que se realizaron dentro del rango establecido por el administrador. Además, al hacer clic en el botón verde de "Ver detalles", podremos acceder a la información específica de los productos adquiridos.
+> ![image](https://github.com/user-attachments/assets/4cdf4159-9241-4178-bbd9-62e77f0f28eb)
+
+Al hacer clic en la pestaña de comentarios, podremos ver las opiniones que los clientes han dejado sobre los productos.
+![image](https://github.com/user-attachments/assets/3a23756e-283e-428c-aa96-41c5de3077ce)
+
+> [!NOTE]
+> Al presionar el botón verde, se abrirá un modal donde podrás visualizar todos los comentarios que los clientes han dejado sobre el producto, así como su calificación.
+> ![image](https://github.com/user-attachments/assets/d65d81de-c87a-4507-bf02-4cde1432cc19)
+
+
+
 
 
 
