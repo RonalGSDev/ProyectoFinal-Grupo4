@@ -234,10 +234,10 @@ module.exports = Comentarios;
 ]
 ````
 ## 4. Wireframes
-[WIREFRAMES.pdf](https://github.com/user-attachments/files/17372670/WIREFRAMES.pdf)
+[WIREFRAMES.pdf](https://github.com/user-attachments/files/17593680/WIREFRAMES.pdf)
 
 ## 5. Mockups
-[MOCKUPS.pdf](https://github.com/user-attachments/files/17372672/MOCKUPS.pdf)
+[MOCKUPS.pdf](https://github.com/user-attachments/files/17593681/MOCKUPS.pdf)
 
 ## 6. Pruebas de uso de la aplicación web
 
