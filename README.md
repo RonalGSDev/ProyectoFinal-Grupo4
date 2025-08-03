@@ -1,16 +1,5 @@
 # Documentacion Proyecto Final
 
-## Integrantes
-
-No.|Nombres|Carné
--|-|-|
-1|Ronal Vincio Gómez Santos|2019-012886
-2|Fátima Fernanda Higueros Aguaré|2024-011300
-3|Jocelyn Eunice Morales Hernández|2021-077313
-4|Luis Pablo Barrios López|
-5|Diego Alejandro del Cid Sanúm|2024-009781
-
-
 # Entregables
 
 ## 1. Modelo entidad Relación
